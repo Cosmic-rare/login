@@ -23,4 +23,4 @@ $ python app.py
 6. (ログインしてないとそう出てきます)
 7. リンクをDMで送るようにすればセキュリティーも万全です。
 
-![きゃー](Screenshot 2021_09_19 20_16_09.png)
+![きゃー](https://raw.githubusercontent.com/Cosmic-rare/login/main/Screenshot%202021_09_19%2020_16_09.png)

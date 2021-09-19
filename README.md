@@ -1,23 +1,24 @@
-# login
-ログインプログラムです。
-"/"を開くと、
-if ログインしている:
-    学籍番号を表示
-else:
-    ログインページへジャンプ
+# Discordを使ったログインアプリ
 
-"/login"(ログインページ)
-if ログインしている:
-    "/"へジャンプ
-else:
-    ログインフォーム(action="/save")
+```bash
+$ pip install -r requirements.txt
+$ npm install
+```
 
-"/save"(ログインページからのPSOT)
-if 登録してある:
-    "/"へのリンクのあるページを表示
-else:
-    "/login"へジャンプ
- 
-現在利用可能な学籍番号は、1214または1209のみです。
+```.env
+# これはsampleです
+TOKEN=la;kjdsl;fkaj;dslkfja;ldksf;aldkfj;alkdsjf;lakjsd;f
+```
 
-利用ライブラリー : Flask
+```bash
+$ node index.js
+$ python app.py
+```
+
+1. Discordで`!button`
+2. 出てきたボタンを押す
+3. リンクをぽちっと
+4. (もう一回そこを開いてもエラーが出ます)
+5. `/all`を開くとユーザー名画表示されます
+6. (ログインしてないとそう出てきます)
+7. リンクをDMで送るようにすればセキュリティーも万全です。

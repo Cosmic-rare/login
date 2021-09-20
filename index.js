@@ -25,12 +25,10 @@ client.on('interactionCreate', async (interaction) => {
     if (interaction.customId === "contact") {
         // hash生成
         data = hash(interaction.user.id);
-        await interaction.reply({
-            // 生成したhashをurlに埋め込む
-            content: `http://localhost:5000/${interaction.user.id}/${data}`,
-            ephemeral: false
-        });
         add(interaction.user.id, data);
+        client.users.fetch(interaction.user.id).then((user) => {
+            user.send(`http://localhost:5000/${interaction.user.id}/${data}`)
+        })
     }
 });
 

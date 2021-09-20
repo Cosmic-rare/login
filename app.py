@@ -27,7 +27,7 @@ def get_user(user_id):
 def index(id, token):
     # 既に使われているか
     if collection.find_one(filter={'token': token})["used"]:
-        return render_template('used_error.html')
+        return 'そのログインコードはすぐに使われています'
     
     # trueにして使われてることにする
     collection.update_one({'token': token}, {'$set':{'used': True}})
@@ -37,7 +37,7 @@ def index(id, token):
 
     # TOKENをcookieに保存する(30分でクリア)
     expires = int(datetime.datetime.now().timestamp()) + 60 * 30
-    response = make_response(render_template('index.html', data=text))    
+    response = make_response(text)    
     response.set_cookie("TOKEN", value='{"token":"'+token+'"}', expires=expires)
     return response
 
@@ -47,7 +47,7 @@ def all():
     if cookie is None:
         return "ログインしていません"
     userName = get_user(collection.find_one(filter={"token": json.loads(cookie)["token"]})["user_id"])["username"]
-    return render_template('all.html', userName=userName)
+    return userName
 
 if  __name__ == '__main__':
     app.run(debug=True)

@@ -1,7 +1,7 @@
 var request = require('request');
 require('dotenv').config();
 
-module.exports = function(userid){
+module.get = function(userid){
     const headers = {
         "Authorization": `Bot ${process.env.TOKEN}`
     };

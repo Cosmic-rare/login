@@ -13,10 +13,6 @@ app.get('/:userid/:token', function (req, res) {
     res.render("index", {user: username});
 });
 
-app.get('/', function (req, res) {
-    res.send(gets.getName());
-}) ;
-
 app.listen(port, () => {
     console.log(`listening on ${port}`)
 })

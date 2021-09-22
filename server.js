@@ -9,6 +9,7 @@ app.set("view engine", "ejs");
 app.get('/:userid/:token', function (req, res) {
     var userid = req.params.userid;
     const username = gets.getName(userid);
+    console.log(username);
     res.render("index", {user: username});
 });
 
